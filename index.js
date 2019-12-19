@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
       const selectMovieOptions = async () => {//Jon's Review
       // have to get to the movie array to then have for loop, loop through and displauy the movies as options.
-        for (let i = 0; i < movieOption.length; i++) {
+        for (let i = 0; i <= movieOption.length; i++) {
           let options = document.createElement("option");
-          options.innerText = [0].title;
-          options.value = [0].title;
+          options.innerText = movieOption[0].title;
+          options.value = movieOption[0].title;
           select.appendChild(options)
           debugger;
         }
