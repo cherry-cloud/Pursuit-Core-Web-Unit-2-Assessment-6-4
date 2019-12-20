@@ -26,38 +26,36 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(error)
     }
     
-      const selectMovieOptions = async () => {//Jon's Review
-      // have to get to the movie array to then have for loop, loop through and displauy the movies as options.
+      const selectMovieOptions = async () => {
         for (let i = 0; i <= movieOption.length; i++) {
           let options = document.createElement("option");
-          options.innerText = movieOption[0].title;
-          options.value = movieOption[0].title;
+          options.innerText = movieOption[i].title;
+          options.value = movieOption[i].title;
           select.appendChild(options)
-          debugger;
         }
       }
       selectMovieOptions()
-      const movieDescription = () => {//[i]= should be theindex number of the movie array maybe try for loop here as well
-        selectMovieOptions();//If I can get this to loop though the movies and display in the select then I should be able to key into it to have the info show in the movie description... or maybe the requestMoviesOption async function
-        let title = document.createElement("h3");
-        let movieYear = document.createElement("p");
-        let movieSynop = document.createElement("p");
-        // title.innerText = ;//movies.data[i].title
-        // movieYear.innerText = ;//movies.data[i].release_date
-        // movieSynop.innerText = ;//movies.data[i].description
 
-        movieInfo.appendChild(title);
-        movieInfo.appendChild(movieYear);
-        movieInfo.appendChild(movieSynop);
+      const movieDescription = () => {
 
-        
-
+        for (let i = 0; i <= movieOption.length; i++) {
+          let title = document.createElement("h3");
+          let movieYear = document.createElement("p");
+          let movieSynop = document.createElement("p");
+          title.innerText = movieOption[i].title;
+          movieYear.innerText = movieOption[i].release_date;
+          movieSynop.innerText = movieOption[i].description;
+          // debugger;
+          movieInfo.appendChild(title);
+          movieInfo.appendChild(movieYear);
+          movieInfo.appendChild(movieSynop);
+        }
       }
+      movieDescription();
   }
 
 
   requestMovieInfo();
-  // movieDescription();
 
 
 })
