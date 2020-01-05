@@ -1,35 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   let movieOption;
-//   let movieArray
-//   let movieInfoRequest
-
-//   const apiRequest = async () => {
-//     try {
-//       movieInfoRequest = await axios.get("https://ghibliapi.herokuapp.com/films");
-//       movieArray = movieInfoRequest.data;
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-  
-
-//   const populateSelected = async () => {
-//     apiRequest()
-//     for (let i = 0; i <= movieArray.length; i++) {
-//       console.log(movieArray[i])
-//       // let select = document.querySelector("#movieTitles");
-//       // let movieTitlesOption = document.createElement("option");
-//       // movieTitlesOption.value = movieArray[i].title;
-//       // movieTitlesOption.innerText = movieArray[i].title;
-//       // select.appendChild(movieTitlesOption);
-      
-//     }
-//   }
-//   populateSelected()
-
-// ;
-// })
-
 document.addEventListener("DOMContentLoaded", () => {
   let form = document.querySelector("form");
   let movieInfo = document.querySelector(".movieInfo");
@@ -53,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i <= movieOption.length; i++) {
         options = document.createElement("option");
         options.innerText = movieOption[i].title;
-        // options.value = movieOption[i].title;
+        options.value = movieOption[i].title;
         
         select.appendChild(options)
         
@@ -85,9 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
       }
-
-      
-      // debugger;
     }, false)
     
     form.addEventListener("submit", (event) => {
